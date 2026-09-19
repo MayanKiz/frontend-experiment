@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open in Chrome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 28px 22px;
+      border-radius: 18px;
+      width: 90%;
+      max-width: 340px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .emoji {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .redirect {
+      margin-top: 22px;
+      padding: 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .redirect:active {
+      transform: scale(0.97);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="emoji">🌸</div>
+    <h2>This won’t work here</h2>
+    <p>
+      This page needs a proper browser<br>
+      to work smoothly.<br>
+      Please open it in Chrome.
+    </p>
+
+    <div class="redirect" onclick="openBrowser()">
+      Open in Browser →
+    </div>
+  </div>
+
+  <script>
+    function openBrowser() {
+      const url = "surprise-self-five.vercel.app"; // 🔁 replace with your real link
+
+      // Android intent to open in Chrome or default browser
+      window.location.href =
+        "intent://" + url.replace(/^https?:\/\//, "") +
+        "#Intent;scheme=https;package=com.android.chrome;end";
+    }
+  </script>
+
+</body>
+</html>
